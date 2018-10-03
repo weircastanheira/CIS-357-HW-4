@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cis357hw3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="DecimalMinusTextField">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1eK-un-Zwo">
+                                <rect key="frame" x="8" y="28" width="359" height="182"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length Convertion Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zol-wR-4Cr" customClass="ConversionCalcLabel" customModule="cis357hw3">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoS-nO-BNg" customClass="ConversionCalcLabel" customModule="cis357hw3">
+                                        <rect key="frame" x="0.0" y="38" width="359" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-Sk-Jdr">
+                                        <rect key="frame" x="0.0" y="76" width="359" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-qK-1aZ" customClass="ConversionCalcTextField" customModule="cis357hw3">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIX-GS-ytM" customClass="ConversionCalcLabel" customModule="cis357hw3">
+                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD2-hq-DMU" customClass="ConversionCalcLabel" customModule="cis357hw3">
+                                        <rect key="frame" x="0.0" y="114" width="359" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U3Q-HU-MGM">
+                                        <rect key="frame" x="0.0" y="152" width="359" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SXd-6F-kDa" customClass="ConversionCalcTextField" customModule="cis357hw3">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-85-u80" customClass="ConversionCalcLabel" customModule="cis357hw3">
+                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g17-jN-YXl" customClass="ConversionCalcButton" customModule="cis357hw3">
+                                <rect key="frame" x="140.5" y="218" width="94" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvh-9g-5el"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N76-fR-V7Z" customClass="ConversionCalcButton" customModule="cis357hw3">
+                                <rect key="frame" x="8" y="218" width="94" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calcButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m7B-Iv-7mL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZA-hY-Ra5" customClass="ConversionCalcButton" customModule="cis357hw3">
+                                <rect key="frame" x="140.5" y="629" width="94" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="buc-EY-Zd7" kind="show" id="FHY-um-46t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-2L-1tU" customClass="ConversionCalcButton" customModule="cis357hw3">
+                                <rect key="frame" x="273.5" y="218" width="93.5" height="30"/>
+                                <state key="normal" title="Mode"/>
+                                <connections>
+                                    <action selector="modePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w16-GX-nst"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1eK-un-Zwo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="1hK-El-yHr"/>
+                            <constraint firstItem="CHH-2L-1tU" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="2Q3-u6-Vzi"/>
+                            <constraint firstItem="g17-jN-YXl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2au-lL-kI6"/>
+                            <constraint firstItem="g17-jN-YXl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="33f-kZ-vMJ"/>
+                            <constraint firstItem="CHH-2L-1tU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="76N-lu-NiE"/>
+                            <constraint firstItem="g17-jN-YXl" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="BF2-lL-zym"/>
+                            <constraint firstItem="nZA-hY-Ra5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Cfa-Yi-bna"/>
+                            <constraint firstItem="N76-fR-V7Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="H7f-Re-ZLq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHH-2L-1tU" secondAttribute="trailing" constant="8" id="aqW-In-ieH"/>
+                            <constraint firstItem="N76-fR-V7Z" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="buw-WS-nlA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1eK-un-Zwo" secondAttribute="trailing" constant="8" id="d9H-kq-Yvw"/>
+                            <constraint firstItem="1eK-un-Zwo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="vv8-hm-SmH"/>
+                            <constraint firstItem="nZA-hY-Ra5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="wEK-WA-o2Y"/>
+                            <constraint firstItem="N76-fR-V7Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="xC3-P9-Nr0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZA-hY-Ra5" secondAttribute="bottom" constant="8" id="zVj-M2-dAZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="input" destination="bIX-GS-ytM" id="gs8-7I-aTK"/>
+                        <outlet property="metersField" destination="SXd-6F-kDa" id="RMH-cN-cem"/>
+                        <outlet property="output" destination="cUd-85-u80" id="Ggh-qK-q1j"/>
+                        <outlet property="yardsField" destination="rpG-qK-1aZ" id="y1G-5c-ClN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279.19999999999999" y="1.3493253373313345"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="QmD-VF-5Cx">
+            <objects>
+                <viewController id="IXx-da-cd0" customClass="lengthPickerViewController" customModule="cis357hw3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ude-8F-c3w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nlq-TM-lOS">
+                                <rect key="frame" x="8" y="72" width="359" height="49"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-cV-v0a">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePV-5S-CJD">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-Cz-qxI">
+                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="20.5"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.61558856870000001" green="0.61558856870000001" blue="0.61558856870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="0eG-dG-g3e" appends="YES" id="0LM-mm-f28"/>
+                                                </connections>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-SK-rpd">
+                                        <rect key="frame" x="0.0" y="28.5" width="359" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-eW-PE6">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbw-tn-NeK" customClass="toUnitsViewController" customModule="cis357hw3" customModuleProvider="target">
+                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="20.5"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.61599336140000005" green="0.61599336140000005" blue="0.61599336140000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="zD2-Aq-AB9" appends="YES" id="1D1-56-rqJ"/>
+                                                </connections>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Wg-vg-MJQ">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hz7-sB-Mjk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="IXx-da-cd0" id="i24-z8-ydg"/>
+                                            <outlet property="delegate" destination="IXx-da-cd0" id="oAE-41-KMv"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="g39-dD-xdT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="i0y-jm-YpM" firstAttribute="trailing" secondItem="Nlq-TM-lOS" secondAttribute="trailing" constant="8" id="0Jt-ji-evQ"/>
+                            <constraint firstItem="i0y-jm-YpM" firstAttribute="trailing" secondItem="6Wg-vg-MJQ" secondAttribute="trailing" id="85r-jM-bWw"/>
+                            <constraint firstItem="6Wg-vg-MJQ" firstAttribute="trailing" secondItem="i0y-jm-YpM" secondAttribute="trailing" id="NiV-SP-Zsr"/>
+                            <constraint firstItem="Nlq-TM-lOS" firstAttribute="top" secondItem="i0y-jm-YpM" secondAttribute="top" constant="8" id="WVH-gN-Qx6"/>
+                            <constraint firstItem="6Wg-vg-MJQ" firstAttribute="bottom" secondItem="i0y-jm-YpM" secondAttribute="bottom" id="b9J-fs-VEq"/>
+                            <constraint firstItem="Nlq-TM-lOS" firstAttribute="leading" secondItem="i0y-jm-YpM" secondAttribute="leading" constant="8" id="ps0-DK-hFR"/>
+                            <constraint firstItem="6Wg-vg-MJQ" firstAttribute="leading" secondItem="i0y-jm-YpM" secondAttribute="leading" id="xN8-yL-QFi"/>
+                            <constraint firstAttribute="bottom" secondItem="6Wg-vg-MJQ" secondAttribute="bottom" id="xPQ-AA-vG8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i0y-jm-YpM"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="duc-YU-C3P">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PUd-oj-fiJ">
+                            <connections>
+                                <action selector="cancelPressed:" destination="IXx-da-cd0" id="1f6-yN-rOj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RM5-uF-qmM">
+                            <connections>
+                                <action selector="savePressed:" destination="IXx-da-cd0" id="aAM-bf-dT3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fromUnits" destination="MCy-Cz-qxI" id="vv0-FC-bz3"/>
+                        <outlet property="picker" destination="hz7-sB-Mjk" id="Cht-0C-Een"/>
+                        <outlet property="toUnits" destination="Mbw-tn-NeK" id="d6A-Kp-kjc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8j-oc-gZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0eG-dG-g3e"/>
+                <tapGestureRecognizer id="zD2-Aq-AB9"/>
+            </objects>
+            <point key="canvasLocation" x="1224.8" y="752.47376311844084"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EKD-hE-4Up">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="buc-EY-Zd7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HeT-3D-3YZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IXx-da-cd0" kind="relationship" relationship="rootViewController" id="5Gc-dW-OZe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JkJ-sW-B5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="820"/>
+        </scene>
+    </scenes>
+</document>
