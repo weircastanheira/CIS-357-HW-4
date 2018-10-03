@@ -23,6 +23,22 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
     func settingsChanged(fromUnits: String, toUnits: String) {
         input.text = fromUnits
         output.text = toUnits
+        // TODO update placeholder text and attributes here!
+        
+        if(whatMode == 1) {
+            yardsField.placeholder = "Enter length in \(input.text!)"
+            metersField.placeholder = "Enter length in \(output.text!)"
+            yardsField.attributedPlaceholder = NSAttributedString(string: yardsField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+            metersField.attributedPlaceholder = NSAttributedString(string: metersField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+        }
+        else if(whatMode == 2) {
+            yardsField.placeholder = "Enter volume in \(input.text!)"
+            metersField.placeholder = "Enter volume in \(output.text!)"
+            yardsField.attributedPlaceholder = NSAttributedString(string: yardsField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+            metersField.attributedPlaceholder = NSAttributedString(string: metersField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+        }
+        
+        
     }
  
     override func viewDidLoad() {
@@ -114,12 +130,16 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
             mode = CalculatorMode.Volume.rawValue
             input.text = VolumeUnit.Gallons.rawValue
             output.text = VolumeUnit.Liters.rawValue
+            yardsField.placeholder = "Enter volume in \(input.text!)"
+            metersField.placeholder = "Enter volume in \(output.text!)"
         }
         else if mode! == CalculatorMode.Volume.rawValue{
             whatMode = 1
             mode = CalculatorMode.Length.rawValue
             input.text = LengthUnit.Yards.rawValue
             output.text = LengthUnit.Meters.rawValue
+            yardsField.placeholder = "Enter length in \(input.text!)"
+            metersField.placeholder = "Enter length in \(output.text!)"
         }
         else{
             print("Error choosing mode")
@@ -127,6 +147,9 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
         
         yardsField.text = ""
         metersField.text = ""
+        yardsField.attributedPlaceholder = NSAttributedString(string: yardsField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+        metersField.attributedPlaceholder = NSAttributedString(string: metersField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
+        
         dismissKeyboard()
     }
     
