@@ -130,6 +130,7 @@
                         <outlet property="input" destination="bIX-GS-ytM" id="gs8-7I-aTK"/>
                         <outlet property="metersField" destination="SXd-6F-kDa" id="RMH-cN-cem"/>
                         <outlet property="output" destination="cUd-85-u80" id="Ggh-qK-q1j"/>
+                        <outlet property="titleConvCalc" destination="zol-wR-4Cr" id="r6M-Aw-kGE"/>
                         <outlet property="yardsField" destination="rpG-qK-1aZ" id="y1G-5c-ClN"/>
                     </connections>
                 </viewController>

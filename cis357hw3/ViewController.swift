@@ -13,6 +13,8 @@ import UIKit
 
 class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSelectionViewController{
 
+
+    @IBOutlet weak var titleConvCalc: UILabel!
     @IBOutlet weak var input: UILabel!
     @IBOutlet weak var output: UILabel!
     @IBOutlet weak var yardsField: DecimalMinusTextField!
@@ -130,6 +132,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
             mode = CalculatorMode.Volume.rawValue
             input.text = VolumeUnit.Gallons.rawValue
             output.text = VolumeUnit.Liters.rawValue
+            titleConvCalc.text = "Volume Converter Calculator"
             yardsField.placeholder = "Enter volume in \(input.text!)"
             metersField.placeholder = "Enter volume in \(output.text!)"
         }
@@ -138,6 +141,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
             mode = CalculatorMode.Length.rawValue
             input.text = LengthUnit.Yards.rawValue
             output.text = LengthUnit.Meters.rawValue
+            titleConvCalc.text = "Length Converter Calculator"
             yardsField.placeholder = "Enter length in \(input.text!)"
             metersField.placeholder = "Enter length in \(output.text!)"
         }
@@ -147,6 +151,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
         
         yardsField.text = ""
         metersField.text = ""
+        
         yardsField.attributedPlaceholder = NSAttributedString(string: yardsField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
         metersField.attributedPlaceholder = NSAttributedString(string: metersField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: FOREGROUND_COLOR])
         
