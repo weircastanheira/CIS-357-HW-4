@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSelectionViewController{
+class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthSelectionViewController {
 
 
     @IBOutlet weak var titleConvCalc: UILabel!
@@ -46,6 +46,10 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // When we click on one of the textboxes it clears both of them
+        //self.yardsField.delegate = self
+        //self.metersField.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         // dismiss keyboard when tapping outside oftext fields
@@ -159,13 +163,19 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate,lengthSe
     }
     
  
-    
-    
     @IBAction func clearPressed(_ sender: Any) {
         metersField.text = ""
         yardsField.text = ""
     }
     
+/*
+    // Idea from
+    // https://stackoverflow.com/questions/37084537/how-to-clear-text-field
+    func textFieldDidBeginEditing(_ textField: DecimalMinusTextField) {
+        yardsField.text = ""
+        metersField.text = ""
+    }
+ */
 
 }
 
