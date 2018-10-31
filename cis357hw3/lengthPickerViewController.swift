@@ -11,8 +11,6 @@ import UIKit
 
 protocol lengthSelectionViewController{
     func settingsChanged(fromUnits: String, toUnits: String)
-
-
 }
 
 class lengthPickerViewController: UIViewController, UITextFieldDelegate{
@@ -61,7 +59,9 @@ class lengthPickerViewController: UIViewController, UITextFieldDelegate{
     }
 
     @IBAction func cancelPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        // Does not work anymore
+        //dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
         
     }
     @objc func toPressed(){

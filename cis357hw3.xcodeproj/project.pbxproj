@@ -15,6 +15,8 @@
 		49B3AFCE21501EB20026566C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B3AFCC21501EB20026566C /* LaunchScreen.storyboard */; };
 		49B3AFD921501EB30026566C /* cis357hw3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3AFD821501EB30026566C /* cis357hw3Tests.swift */; };
 		49B3AFE421501EB30026566C /* cis357hw3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3AFE321501EB30026566C /* cis357hw3UITests.swift */; };
+		49B89756218A1A540042F6D1 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89755218A1A540042F6D1 /* Conversion.swift */; };
+		49B89758218A3FF50042F6D1 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B89757218A3FF50042F6D1 /* HistoryTableViewController.swift */; };
 		D46D49D521619B7900236BA3 /* ConversionCalcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D49D421619B7900236BA3 /* ConversionCalcTextField.swift */; };
 		D46D49D72161A2F900236BA3 /* ConversionCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D49D62161A2F900236BA3 /* ConversionCalcLabel.swift */; };
 		D46D49D92161A35100236BA3 /* ConversionCalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D49D82161A35100236BA3 /* ConversionCalcButton.swift */; };
@@ -55,6 +57,8 @@
 		49B3AFDF21501EB30026566C /* cis357hw3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cis357hw3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B3AFE321501EB30026566C /* cis357hw3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cis357hw3UITests.swift; sourceTree = "<group>"; };
 		49B3AFE521501EB30026566C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B89755218A1A540042F6D1 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		49B89757218A3FF50042F6D1 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		D46D49D421619B7900236BA3 /* ConversionCalcTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcTextField.swift; sourceTree = "<group>"; };
 		D46D49D62161A2F900236BA3 /* ConversionCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcLabel.swift; sourceTree = "<group>"; };
 		D46D49D82161A35100236BA3 /* ConversionCalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalcButton.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				D46D49D62161A2F900236BA3 /* ConversionCalcLabel.swift */,
 				D46D49D82161A35100236BA3 /* ConversionCalcButton.swift */,
 				D46D49DA2161A57600236BA3 /* ConversionCalcViewController.swift */,
+				49B89755218A1A540042F6D1 /* Conversion.swift */,
+				49B89757218A3FF50042F6D1 /* HistoryTableViewController.swift */,
 			);
 			path = cis357hw3;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46D49D521619B7900236BA3 /* ConversionCalcTextField.swift in Sources */,
+				49B89756218A1A540042F6D1 /* Conversion.swift in Sources */,
 				D46D49DB2161A57600236BA3 /* ConversionCalcViewController.swift in Sources */,
 				D4F301C221580ED90009A47E /* UnitsAndModes.swift in Sources */,
 				D46D49D92161A35100236BA3 /* ConversionCalcButton.swift in Sources */,
 				D4F301C62158511A0009A47E /* lengthPickerViewController.swift in Sources */,
 				D46D49D72161A2F900236BA3 /* ConversionCalcLabel.swift in Sources */,
 				49AB2831215576EE0010E685 /* DecimalMinusTextField.swift in Sources */,
+				49B89758218A3FF50042F6D1 /* HistoryTableViewController.swift in Sources */,
 				49B3AFC621501EB10026566C /* ViewController.swift in Sources */,
 				49B3AFC421501EB10026566C /* AppDelegate.swift in Sources */,
 			);

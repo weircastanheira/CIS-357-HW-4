@@ -21,6 +21,14 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     @IBOutlet weak var metersField: DecimalMinusTextField!
     var mode: String? = CalculatorMode.Length.rawValue
     var whatMode: Int = 1
+    var entries : [Conversion] = []
+    
+    func selectEntry(entry: Conversion) {
+        self.yardsField.text! = String(entry.fromVal)
+        self.metersField.text! = String(entry.toVal)
+// TODO: convert CalculatorMode to String?
+        //self.mode! = String(entry.mode)
+    }
     
     func settingsChanged(fromUnits: String, toUnits: String) {
         input.text = fromUnits
@@ -63,7 +71,12 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination.childViewControllers[0] as? lengthPickerViewController{
+        if(segue.identifier == "historySegue") {
+            let dest = segue.destination as? HistoryTableViewController
+            self.entries = dest!.entries
+        }
+        
+        if let dest = segue.destination as? lengthPickerViewController{
             dest.whichMode = whatMode
 //            dest.fromUnits = input
 //            dest.toUnits = output]
@@ -78,6 +91,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     }
 
     @IBAction func calcButtonPressed(_ sender: UIButton) {
+        
+        entries.append(Conversion.init(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
 
         if self.yardsField.text == "" && self.metersField.text != "" {
             if mode! == CalculatorMode.Length.rawValue{
