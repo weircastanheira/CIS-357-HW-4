@@ -26,8 +26,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     func selectEntry(entry: Conversion) {
         self.yardsField.text! = String(entry.fromVal)
         self.metersField.text! = String(entry.toVal)
-// TODO: convert CalculatorMode to String?
-        //self.mode! = String(entry.mode)
+        self.mode! = entry.mode.rawValue
     }
     
     func settingsChanged(fromUnits: String, toUnits: String) {

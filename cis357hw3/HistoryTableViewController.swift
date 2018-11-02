@@ -14,6 +14,7 @@ protocol HistoryTableViewControllerDelegate {
 
 class HistoryTableViewController: UITableViewController {
     var entries : [Conversion] = []
+    var historyDelegate:HistoryTableViewControllerDelegate?
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,4 +35,16 @@ class HistoryTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // use the historyDelegate to report back entry selected to the calculator scene
+        if let del = self.historyDelegate {
+            let conv = entries[indexPath.row]
+            del.selectEntry(entry: conv)
+        }
+        
+        // this pops back to the main calculator
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+
 }

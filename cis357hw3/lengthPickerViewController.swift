@@ -59,8 +59,7 @@ class lengthPickerViewController: UIViewController, UITextFieldDelegate{
     }
 
     @IBAction func cancelPressed(_ sender: Any) {
-        // Does not work anymore
-        //dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil) // Does not work anymore
         _ = self.navigationController?.popViewController(animated: true)
         
     }
@@ -94,7 +93,10 @@ class lengthPickerViewController: UIViewController, UITextFieldDelegate{
     @IBAction func savePressed(_ sender: Any) {
         
         delegate?.settingsChanged(fromUnits: fromUnits!.text!, toUnits: toUnits!.text!)
-        dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
+        
+        
+        //dismiss(animated: true, completion: nil) // Does not work anymore
         
     }
     
