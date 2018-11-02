@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49A79762218CB6840015CFC7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */; };
 		49AB2831215576EE0010E685 /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB2830215576EE0010E685 /* DecimalMinusTextField.swift */; };
 		49B3AFC421501EB10026566C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3AFC321501EB10026566C /* AppDelegate.swift */; };
 		49B3AFC621501EB10026566C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3AFC521501EB10026566C /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		49AB2830215576EE0010E685 /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalMinusTextField.swift; sourceTree = "<group>"; };
 		49B3AFC021501EB10026566C /* cis357hw3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cis357hw3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B3AFC321501EB10026566C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				D46D49DA2161A57600236BA3 /* ConversionCalcViewController.swift */,
 				49B89755218A1A540042F6D1 /* Conversion.swift */,
 				49B89757218A3FF50042F6D1 /* HistoryTableViewController.swift */,
+				49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */,
 			);
 			path = cis357hw3;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				D4F301C221580ED90009A47E /* UnitsAndModes.swift in Sources */,
 				D46D49D92161A35100236BA3 /* ConversionCalcButton.swift in Sources */,
 				D4F301C62158511A0009A47E /* lengthPickerViewController.swift in Sources */,
+				49A79762218CB6840015CFC7 /* HistoryTableViewCell.swift in Sources */,
 				D46D49D72161A2F900236BA3 /* ConversionCalcLabel.swift in Sources */,
 				49AB2831215576EE0010E685 /* DecimalMinusTextField.swift in Sources */,
 				49B89758218A3FF50042F6D1 /* HistoryTableViewController.swift in Sources */,

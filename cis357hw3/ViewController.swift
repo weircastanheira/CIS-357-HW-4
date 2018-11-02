@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthSelectionViewController {
+class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthSelectionViewController, HistoryTableViewControllerDelegate {
 
 
     @IBOutlet weak var titleConvCalc: UILabel!
@@ -23,16 +23,18 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     var whatMode: Int = 1
     var entries : [Conversion] = []
     
+    //  HW#8: Part 01, Step 3
     func selectEntry(entry: Conversion) {
-        self.yardsField.text! = String(entry.fromVal)
-        self.metersField.text! = String(entry.toVal)
-        self.mode! = entry.mode.rawValue
+        self.yardsField.text = String(entry.fromVal)
+        self.metersField.text = String(entry.toVal)
+        self.mode = entry.mode.rawValue
+        self.input.text = entry.fromUnits
+        self.output.text = entry.toUnits
     }
     
     func settingsChanged(fromUnits: String, toUnits: String) {
         input.text = fromUnits
         output.text = toUnits
-        // TODO update placeholder text and attributes here!
         
         if(whatMode == 1) {
             yardsField.placeholder = "Enter length in \(input.text!)"
@@ -73,6 +75,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
         if(segue.identifier == "historySegue") {
             let dest = segue.destination as? HistoryTableViewController
             self.entries = dest!.entries
+            dest?.historyDelegate = self
         }
         
         if let dest = segue.destination as? lengthPickerViewController{
@@ -91,7 +94,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
 
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         
-        entries.append(Conversion.init(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+//        entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
 
         if self.yardsField.text == "" && self.metersField.text != "" {
             if mode! == CalculatorMode.Length.rawValue{
@@ -101,6 +104,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let jDouble = Double(self.metersField.text!)
                 let calc = jDouble! * lengthConversionTable[key]!
                 self.yardsField.text = String(calc)
+                
+                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else if mode! == CalculatorMode.Volume.rawValue {
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -109,6 +114,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let jDouble = Double(self.metersField.text!)
                 let calc = jDouble! * volumeConversionTable[key]!
                 self.yardsField.text = String(calc)
+                
+                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else{
                 print("Error calculating")
@@ -122,6 +129,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let jDouble = Double(self.yardsField.text!)
                 let calc = jDouble! * lengthConversionTable[key]!
                 self.metersField.text = String(calc)
+                
+                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else if mode! == CalculatorMode.Volume.rawValue{
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -130,6 +139,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let jDouble = Double(self.yardsField.text!)
                 let calc = jDouble! * volumeConversionTable[key]!
                 self.metersField.text = String(calc)
+                
+                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else{
                 print("Error calculating")
