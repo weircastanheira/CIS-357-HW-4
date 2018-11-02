@@ -200,19 +200,6 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
         yardsField.text = ""
         metersField.text = ""
     }
- */
+*/
 
 }
-
-
-
-
-
-
-
-
-
-    
-    
-
-
