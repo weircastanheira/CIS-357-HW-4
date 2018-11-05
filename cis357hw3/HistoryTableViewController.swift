@@ -19,6 +19,8 @@ class HistoryTableViewController: UITableViewController {
             LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
         Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
             VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
+    
+//    Part 2 Step 2
     var tableViewData: [(sectionHeader: String, entries: [Conversion])]? {
         didSet {
             DispatchQueue.main.async {
@@ -63,12 +65,14 @@ class HistoryTableViewController: UITableViewController {
         self.tableViewData = tmpData
     }
     
+//    Part 2 Step 3
 //    viewDidLoad function - HistoryTableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sortIntoSections(entries: self.entries)
     }
 
+//    Part 2 Step 10
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -88,9 +92,10 @@ class HistoryTableViewController: UITableViewController {
         }
     }
 
-    
+//    Part 2 Step 11
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FancyCell", for: indexPath) as! HistoryTableViewCell
+        
         if let entry = self.tableViewData?[indexPath.section].entries[indexPath.row] {
             cell.conversionLabel.text = "\(entry.fromVal) \(entry.fromUnits) = \(entry.toVal) \(entry.toUnits)"
             cell.timestampLabel.text = "\(entry.timestamp.description)"
@@ -99,6 +104,7 @@ class HistoryTableViewController: UITableViewController {
         return cell
     }
     
+//    Part 2 Step 12
     // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) ->
         String? {

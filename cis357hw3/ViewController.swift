@@ -21,7 +21,11 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     @IBOutlet weak var metersField: DecimalMinusTextField!
     var mode: String? = CalculatorMode.Length.rawValue
     var whatMode: Int = 1
-    var entries : [Conversion] = []
+    var entries : [Conversion] = [
+        Conversion(fromVal: 1, toVal: 1760, mode: .Length, fromUnits: LengthUnit.Miles.rawValue, toUnits:
+            LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
+        Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
+            VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
     
     //  HW#8: Part 01, Step 3
     func selectEntry(entry: Conversion) {
@@ -74,7 +78,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "historySegue") {
             let dest = segue.destination as? HistoryTableViewController
-            self.entries = dest!.entries
+            dest!.entries = self.entries
             dest?.historyDelegate = self
         }
         
