@@ -6,6 +6,7 @@
 //  Copyright © 2018 Workbook. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 // Code from HW#4
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navAppearance.tintColor = FOREGROUND_COLOR
         navAppearance.isTranslucent = false
         navAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        FirebaseApp.configure()
         
         return true
     }

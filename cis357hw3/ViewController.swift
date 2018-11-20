@@ -7,6 +7,8 @@
 //  Copyright © 2018 Workbook. All rights reserved.
 //
 
+// HW#10
+import FirebaseDatabase
 import UIKit
 
 
@@ -26,6 +28,8 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
             LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
         Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
             VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
+    //    HW#10
+    fileprivate var ref : DatabaseReference?
     
     //  HW#8: Part 01, Step 3
     func selectEntry(entry: Conversion) {
@@ -64,6 +68,10 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
         //self.metersField.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //        HW#10
+        self.ref = Database.database().reference()
+        self.registerForFireBaseUpdates()
         
         // dismiss keyboard when tapping outside oftext fields
         let detectTouch = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -109,7 +117,15 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let calc = jDouble! * lengthConversionTable[key]!
                 self.yardsField.text = String(calc)
                 
-                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#10
+                // save history to firebase
+                let entry = Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!,
+                                       fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init())
+                let newChild = self.ref?.child("history").childByAutoId()
+                newChild?.setValue(self.toDictionary(vals: entry))
+                
+                
+//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else if mode! == CalculatorMode.Volume.rawValue {
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -119,7 +135,14 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let calc = jDouble! * volumeConversionTable[key]!
                 self.yardsField.text = String(calc)
                 
-                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#10
+                // save history to firebase
+                let entry = Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!,
+                                       fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init())
+                let newChild = self.ref?.child("history").childByAutoId()
+                newChild?.setValue(self.toDictionary(vals: entry))
+                
+//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else{
                 print("Error calculating")
@@ -134,7 +157,14 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let calc = jDouble! * lengthConversionTable[key]!
                 self.metersField.text = String(calc)
                 
-                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#10
+                // save history to firebase
+                let entry = Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!,
+                                       fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init())
+                let newChild = self.ref?.child("history").childByAutoId()
+                newChild?.setValue(self.toDictionary(vals: entry))
+                
+//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else if mode! == CalculatorMode.Volume.rawValue{
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -144,7 +174,14 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let calc = jDouble! * volumeConversionTable[key]!
                 self.metersField.text = String(calc)
                 
-                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#10
+                // save history to firebase
+                let entry = Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!,
+                                       fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init())
+                let newChild = self.ref?.child("history").childByAutoId()
+                newChild?.setValue(self.toDictionary(vals: entry))
+                
+//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
             }
             else{
                 print("Error calculating")
@@ -197,13 +234,41 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
         yardsField.text = ""
     }
     
-/*
-    // Idea from
-    // https://stackoverflow.com/questions/37084537/how-to-clear-text-field
-    func textFieldDidBeginEditing(_ textField: DecimalMinusTextField) {
-        yardsField.text = ""
-        metersField.text = ""
+    //    HW#10
+    fileprivate func registerForFireBaseUpdates()
+    {
+        self.ref!.child("history").observe(.value, with: { snapshot in
+            if let postDict = snapshot.value as? [String : AnyObject] {
+                var tmpItems = [Conversion]()
+                for (_,val) in postDict.enumerated() {
+                    let entry = val.1 as! Dictionary<String,AnyObject>
+                    let timestamp = entry["timestamp"] as! String?
+                    let origFromVal = entry["origFromVal"] as! Double?
+                    let origToVal = entry["origToVal"] as! Double?
+                    let origFromUnits = entry["origFromUnits"] as! String?
+                    let origToUnits = entry["origToUnits"] as! String?
+                    let origMode = entry["origMode"] as! String?
+                    
+                    tmpItems.append(Conversion(fromVal: origFromVal!, toVal: origToVal!, mode: CalculatorMode(rawValue: origMode!)!, fromUnits: origFromUnits!, toUnits: origToUnits!, timestamp: (timestamp?.dateFromISO8601)!))
+                }
+                self.entries = tmpItems
+            }
+        })
+        
     }
-*/
+    
+    //    HW#10
+    func toDictionary(vals: Conversion) -> NSDictionary {
+        return [
+            "timestamp": NSString(string: (vals.timestamp.iso8601)),
+            "origFromVal" : NSNumber(value: vals.fromVal),
+            "origToVal" : NSNumber(value: vals.toVal),
+            "origMode" : vals.mode.rawValue,
+            "origFromUnits" : vals.fromUnits,
+            "origToUnits" : vals.toUnits
+        ]
+    }
+
+
 
 }
