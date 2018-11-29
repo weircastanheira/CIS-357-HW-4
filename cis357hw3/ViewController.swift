@@ -21,6 +21,14 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     @IBOutlet weak var output: UILabel!
     @IBOutlet weak var yardsField: DecimalMinusTextField!
     @IBOutlet weak var metersField: DecimalMinusTextField!
+    
+    @IBOutlet weak var weatherImage: UIImageView!
+    
+    @IBOutlet weak var forecast: UILabel!
+    
+    @IBOutlet weak var temperature: UILabel!
+    
+    
     var mode: String? = CalculatorMode.Length.rawValue
     var whatMode: Int = 1
     var entries : [Conversion] = [
@@ -28,8 +36,12 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
             LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
         Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
             VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
+    
     //    HW#10
     fileprivate var ref : DatabaseReference?
+    
+    //    HW#11
+    let wAPI = DarkSkyWeatherService.getInstance()
     
     //  HW#8: Part 01, Step 3
     func selectEntry(entry: Conversion) {
@@ -78,6 +90,11 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
         self.view.addGestureRecognizer(detectTouch)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.clearWeatherViews()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,8 +122,6 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     }
 
     @IBAction func calcButtonPressed(_ sender: UIButton) {
-        
-//        entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
 
         if self.yardsField.text == "" && self.metersField.text != "" {
             if mode! == CalculatorMode.Length.rawValue{
@@ -124,8 +139,16 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let newChild = self.ref?.child("history").childByAutoId()
                 newChild?.setValue(self.toDictionary(vals: entry))
                 
-                
-//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#11
+                wAPI.getWeatherForDate(date: Date(), forLocation: (42.963686, -85.888595)) { (weather) in
+                    if let w = weather {
+                        DispatchQueue.main.async {
+                            self.forecast.text = w.summary
+                            self.weatherImage.image = UIImage(named: w.iconName)
+                            self.temperature.text = "\(w.temperature.roundTo(places: 1))"
+                        }
+                    }
+                }
             }
             else if mode! == CalculatorMode.Volume.rawValue {
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -142,7 +165,16 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let newChild = self.ref?.child("history").childByAutoId()
                 newChild?.setValue(self.toDictionary(vals: entry))
                 
-//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#11
+                wAPI.getWeatherForDate(date: Date(), forLocation: (42.963686, -85.888595)) { (weather) in
+                    if let w = weather {
+                        DispatchQueue.main.async {
+                            self.forecast.text = w.summary
+                            self.weatherImage.image = UIImage(named: w.iconName)
+                            self.temperature.text = "\(w.temperature.roundTo(places: 1))"
+                        }
+                    }
+                }
             }
             else{
                 print("Error calculating")
@@ -164,7 +196,16 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let newChild = self.ref?.child("history").childByAutoId()
                 newChild?.setValue(self.toDictionary(vals: entry))
                 
-//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#11
+                wAPI.getWeatherForDate(date: Date(), forLocation: (42.963686, -85.888595)) { (weather) in
+                    if let w = weather {
+                        DispatchQueue.main.async {
+                            self.forecast.text = w.summary
+                            self.weatherImage.image = UIImage(named: w.iconName)
+                            self.temperature.text = "\(w.temperature.roundTo(places: 1))"
+                        }
+                    }
+                }
             }
             else if mode! == CalculatorMode.Volume.rawValue{
                 let i = VolumeUnit(rawValue: self.input.text!)
@@ -181,7 +222,16 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
                 let newChild = self.ref?.child("history").childByAutoId()
                 newChild?.setValue(self.toDictionary(vals: entry))
                 
-//                entries.append(Conversion(fromVal: Double(self.yardsField.text!)!, toVal: Double(self.metersField.text!)!, mode: CalculatorMode(rawValue: mode!)!, fromUnits: self.input.text!, toUnits: self.output.text!, timestamp: Date.init()))
+                //                HW#11
+                wAPI.getWeatherForDate(date: Date(), forLocation: (42.963686, -85.888595)) { (weather) in
+                    if let w = weather {
+                        DispatchQueue.main.async {
+                            self.forecast.text = w.summary
+                            self.weatherImage.image = UIImage(named: w.iconName)
+                            self.temperature.text = "\(w.temperature.roundTo(places: 1))"
+                        }
+                    }
+                }
             }
             else{
                 print("Error calculating")
@@ -232,6 +282,7 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
     @IBAction func clearPressed(_ sender: Any) {
         metersField.text = ""
         yardsField.text = ""
+        self.clearWeatherViews()
     }
     
     //    HW#10
@@ -268,7 +319,13 @@ class ViewController: ConversionCalcViewController, UITextFieldDelegate, lengthS
             "origToUnits" : vals.toUnits
         ]
     }
-
-
-
+    
+    //    HW#11 - Optional
+    func clearWeatherViews() {
+        self.weatherImage.image = nil
+        self.forecast.text = ""
+        self.temperature.text = ""
+    }
 }
+
+

@@ -78,7 +78,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g17-jN-YXl" customClass="ConversionCalcButton" customModule="cis357hw3">
-                                <rect key="frame" x="140.5" y="262" width="94" height="30"/>
+                                <rect key="frame" x="141" y="262" width="94" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvh-9g-5el"/>
@@ -92,27 +92,54 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-2L-1tU" customClass="ConversionCalcButton" customModule="cis357hw3">
-                                <rect key="frame" x="273.5" y="262" width="93.5" height="30"/>
+                                <rect key="frame" x="273" y="262" width="94" height="30"/>
                                 <state key="normal" title="Mode"/>
                                 <connections>
                                     <action selector="modePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w16-GX-nst"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F66-h1-BiP">
+                                <rect key="frame" x="8" y="333" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="Wg1-xR-EuB"/>
+                                    <constraint firstAttribute="height" constant="125" id="f8W-cl-OEH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOU-Oa-Gui" customClass="ConversionCalcLabel" customModule="cis357hw3" customModuleProvider="target">
+                                <rect key="frame" x="148" y="333" width="211" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs6-yz-ELn" customClass="ConversionCalcLabel" customModule="cis357hw3" customModuleProvider="target">
+                                <rect key="frame" x="141" y="437.5" width="218" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="F66-h1-BiP" firstAttribute="top" secondItem="N76-fR-V7Z" secondAttribute="bottom" constant="41" id="1Px-pv-pva"/>
                             <constraint firstItem="1eK-un-Zwo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="1hK-El-yHr"/>
                             <constraint firstItem="CHH-2L-1tU" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="2Q3-u6-Vzi"/>
                             <constraint firstItem="g17-jN-YXl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2au-lL-kI6"/>
                             <constraint firstItem="g17-jN-YXl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="33f-kZ-vMJ"/>
                             <constraint firstItem="CHH-2L-1tU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="76N-lu-NiE"/>
                             <constraint firstItem="g17-jN-YXl" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="BF2-lL-zym"/>
+                            <constraint firstItem="Cs6-yz-ELn" firstAttribute="bottom" secondItem="F66-h1-BiP" secondAttribute="bottom" id="F6c-D9-8gf"/>
+                            <constraint firstItem="OOU-Oa-Gui" firstAttribute="leading" secondItem="F66-h1-BiP" secondAttribute="trailing" constant="15" id="Fs2-dr-D8J"/>
                             <constraint firstItem="N76-fR-V7Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="H7f-Re-ZLq"/>
+                            <constraint firstItem="Cs6-yz-ELn" firstAttribute="leading" secondItem="F66-h1-BiP" secondAttribute="trailing" constant="8" id="IRk-kC-8k0"/>
+                            <constraint firstItem="F66-h1-BiP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="WiS-eX-r2E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OOU-Oa-Gui" secondAttribute="trailing" constant="16" id="YBX-1R-NPa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHH-2L-1tU" secondAttribute="trailing" constant="8" id="aqW-In-ieH"/>
                             <constraint firstItem="N76-fR-V7Z" firstAttribute="top" secondItem="1eK-un-Zwo" secondAttribute="bottom" constant="8" id="buw-WS-nlA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1eK-un-Zwo" secondAttribute="trailing" constant="8" id="d9H-kq-Yvw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cs6-yz-ELn" secondAttribute="trailing" constant="16" id="nDb-9U-yWr"/>
                             <constraint firstItem="1eK-un-Zwo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="vv8-hm-SmH"/>
                             <constraint firstItem="N76-fR-V7Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="xC3-P9-Nr0"/>
+                            <constraint firstItem="OOU-Oa-Gui" firstAttribute="top" secondItem="F66-h1-BiP" secondAttribute="top" id="yjv-Dx-iO7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -129,16 +156,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="forecast" destination="Cs6-yz-ELn" id="6rZ-A3-tif"/>
                         <outlet property="input" destination="bIX-GS-ytM" id="gs8-7I-aTK"/>
                         <outlet property="metersField" destination="SXd-6F-kDa" id="RMH-cN-cem"/>
                         <outlet property="output" destination="cUd-85-u80" id="Ggh-qK-q1j"/>
+                        <outlet property="temperature" destination="OOU-Oa-Gui" id="5OJ-d0-sbm"/>
                         <outlet property="titleConvCalc" destination="zol-wR-4Cr" id="r6M-Aw-kGE"/>
+                        <outlet property="weatherImage" destination="F66-h1-BiP" id="5UU-4q-dFQ"/>
                         <outlet property="yardsField" destination="rpG-qK-1aZ" id="y1G-5c-ClN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="1.3493253373313345"/>
+            <point key="canvasLocation" x="659.5" y="0.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="QmD-VF-5Cx">

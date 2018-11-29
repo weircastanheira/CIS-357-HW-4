@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4921547221B03DA10019D408 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921547121B03DA10019D408 /* Weather.swift */; };
+		4921547421B03E2B0019D408 /* DarkSkyWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921547321B03E2B0019D408 /* DarkSkyWeatherService.swift */; };
+		4921547621B04FA30019D408 /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4921547521B04FA30019D408 /* Weather.xcassets */; };
 		49A79762218CB6840015CFC7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */; };
 		49AB2831215576EE0010E685 /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB2830215576EE0010E685 /* DecimalMinusTextField.swift */; };
 		49B3AFC421501EB10026566C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3AFC321501EB10026566C /* AppDelegate.swift */; };
@@ -50,6 +53,9 @@
 /* Begin PBXFileReference section */
 		2480C16D62337C4F02259B4F /* Pods-cis357hw3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cis357hw3Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cis357hw3Tests/Pods-cis357hw3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2C9DD6274386E2A37C00A5FF /* Pods-cis357hw3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cis357hw3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cis357hw3Tests/Pods-cis357hw3Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4921547121B03DA10019D408 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		4921547321B03E2B0019D408 /* DarkSkyWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherService.swift; sourceTree = "<group>"; };
+		4921547521B04FA30019D408 /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weather.xcassets; sourceTree = SOURCE_ROOT; };
 		49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		49AB2830215576EE0010E685 /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalMinusTextField.swift; sourceTree = "<group>"; };
 		49B3AFC021501EB10026566C /* cis357hw3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cis357hw3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,7 @@
 				D4F301C121580ED90009A47E /* UnitsAndModes.swift */,
 				49AB2830215576EE0010E685 /* DecimalMinusTextField.swift */,
 				49B3AFCA21501EB20026566C /* Assets.xcassets */,
+				4921547521B04FA30019D408 /* Weather.xcassets */,
 				49B3AFCC21501EB20026566C /* LaunchScreen.storyboard */,
 				49B3AFCF21501EB20026566C /* Info.plist */,
 				D46D49D421619B7900236BA3 /* ConversionCalcTextField.swift */,
@@ -153,6 +160,8 @@
 				49B89757218A3FF50042F6D1 /* HistoryTableViewController.swift */,
 				49A79761218CB6840015CFC7 /* HistoryTableViewCell.swift */,
 				49F80DC221A46560005A663A /* GoogleService-Info.plist */,
+				4921547121B03DA10019D408 /* Weather.swift */,
+				4921547321B03E2B0019D408 /* DarkSkyWeatherService.swift */,
 			);
 			path = cis357hw3;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4921547621B04FA30019D408 /* Weather.xcassets in Resources */,
 				49B3AFCE21501EB20026566C /* LaunchScreen.storyboard in Resources */,
 				49F80DC321A46560005A663A /* GoogleService-Info.plist in Resources */,
 				49B3AFCB21501EB20026566C /* Assets.xcassets in Resources */,
@@ -421,6 +431,8 @@
 				D4F301C62158511A0009A47E /* lengthPickerViewController.swift in Sources */,
 				49A79762218CB6840015CFC7 /* HistoryTableViewCell.swift in Sources */,
 				D46D49D72161A2F900236BA3 /* ConversionCalcLabel.swift in Sources */,
+				4921547421B03E2B0019D408 /* DarkSkyWeatherService.swift in Sources */,
+				4921547221B03DA10019D408 /* Weather.swift in Sources */,
 				49AB2831215576EE0010E685 /* DecimalMinusTextField.swift in Sources */,
 				49B89758218A3FF50042F6D1 /* HistoryTableViewController.swift in Sources */,
 				49B3AFC621501EB10026566C /* ViewController.swift in Sources */,
